@@ -5,7 +5,6 @@ export default function CharacterCard(character) {
   const { image, name, status, species, episode } = character;
 
   const episodesLength = character.episode.length;
-  console.log(episodesLength);
 
   newCharacter.innerHTML = `<li class="card">
     <div class="card__image-container">
