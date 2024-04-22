@@ -1,12 +1,17 @@
-export function CharacterCard(image, name, status, type, episodes) {
+export default function CharacterCard(character) {
   const newCharacter = document.createElement("li");
   newCharacter.classList.add("card");
+
+  const { image, name, status, species, episode } = character;
+
+  const episodesLength = character.episode.length;
+  console.log(episodesLength);
 
   newCharacter.innerHTML = `<li class="card">
     <div class="card__image-container">
       <img
         class="card__image"
-        ${image}
+        src = "${image}"
         alt="Rick Sanchez"
       />
       <div class="card__image-gradient"></div>
@@ -14,12 +19,12 @@ export function CharacterCard(image, name, status, type, episodes) {
     <div class="card__content">
       <h2 class="card__title">${name}</h2>
       <dl class="card__info">
-        <dt class="card__info-title">${status}</dt>
-        <dd class="card__info-description">Alive</dd>
-        <dt class="card__info-title">${type}</dt>
-        <dd class="card__info-description"></dd>
-        <dt class="card__info-title">${episodes}</dt>
-        <dd class="card__info-description">51</dd>
+        <dt class="card__info-title">Status</dt>
+        <dd class="card__info-description">${status}</dd>
+        <dt class="card__info-title">Type</dt>
+        <dd class="card__info-description">${species}</dd>
+        <dt class="card__info-title">Occurences</dt>
+        <dd class="card__info-description">${episodesLength}</dd>
       </dl>
     </div>
   </li>`;
